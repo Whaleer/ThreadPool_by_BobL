@@ -17,7 +17,7 @@ struct Task
     }
     callback function;
     void *arg;
-} Task;
+};
 
 // 任务队列类
 class TaskQueue
@@ -27,13 +27,13 @@ public:
     ~TaskQueue();
 
     // 添加任务
-    void addTask(Task Task);
+    void addTask(Task task);
     void addTask(callback f, void*arg);
     // 取出一个任务
     Task obtainTask();
 
     // 获取当前任务的个数
-    inline int taskNumber()
+    inline size_t taskNumber()
     {
         return m_taskQ.size();
     }

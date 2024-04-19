@@ -10,7 +10,7 @@ TaskQueue::~TaskQueue()
     pthread_mutex_destroy(&m_mutex);
 }
 
-TaskQueue::addTask(Task task)
+void TaskQueue::addTask(Task task)
 {
     pthread_mutex_lock(&m_mutex);
 
@@ -19,7 +19,7 @@ TaskQueue::addTask(Task task)
     pthread_mutex_unlock(&m_mutex);
 }
 
-TaskQueue::addTask(callback f, void *arg)
+void TaskQueue::addTask(callback f, void *arg)
 {
     pthread_mutex_lock(&m_mutex);
 

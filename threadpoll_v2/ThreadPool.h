@@ -1,4 +1,4 @@
-Thre#include "Task_Queue.h"
+#include "Task_Queue.h"
 
 class ThreadPool
 {
@@ -36,6 +36,8 @@ private:
     int exitNum;               // 要销毁的线程个数
     pthread_mutex_t mutexPool; // 锁整个线程池
     pthread_cond_t notEmpty;   // 任务队列是不是空了
+
+    static const int NUMBER = 2;
 
     bool shutdown; // 是否销毁线程池
 };
